@@ -1,0 +1,116 @@
+SIMULATE
+; Passenger Arrival
+GENERATE 5
+
+; Check-In Process
+QUEUE CHECKINQ
+SEIZE CHECKIN
+DEPART CHECKINQ
+ADVANCE 4
+RELEASE CHECKIN
+
+; Security Check
+QUEUE SECURITYQ
+SEIZE SECURITY
+DEPART SECURITYQ
+ADVANCE 3
+RELEASE SECURITY
+
+; Boarding
+ADVANCE 2
+TERMINATE
+
+; Facilities
+CHECKIN EQU 10000
+SECURITY EQU 10001
+
+; Simulation Timer
+GENERATE 480
+TERMINATE 1
+
+START 1
+
+Aim:
+
+Simulation of Airline Passenger Processing System
+
+Theory:
+
+An airline passenger processing system manages passengers through different stages such 
+as check-in, security screening, and boarding. Passengers arrive at the airport, wait in
+queues if service counters are busy, and proceed sequentially through each stage before boarding.
+
+This simulation models the passenger flow through:
+
+Check-in counters
+Security checkpoints
+Boarding process
+
+The system helps analyze:
+
+Queue length
+Waiting time
+Resource utilization
+Passenger flow efficiency
+COMMANDS:
+GENERATE
+Creates passenger arrivals at specified intervals.
+QUEUE
+Places passengers into waiting lines.
+SEIZE
+Allocates a service facility to a passenger.
+DEPART
+Removes passengers from the queue after service begins.
+ADVANCE
+Simulates processing time.
+RELEASE
+Frees the facility after service completion.
+TERMINATE
+Removes the passenger from the system or stops the simulation.
+EQU
+Defines facility identifiers.
+Scenario Overview:
+
+The airline passenger processing system contains:
+
+One check-in counter
+One security checkpoint
+Sequential passenger movement
+
+Passengers arrive every 5 minutes and proceed through:
+
+Check-in
+Security screening
+Boarding gate access
+
+If the facilities are busy, passengers wait in queues until service becomes available.
+
+Key Components:
+1. Passengers
+
+Passengers arrive randomly and move through all airport processing stages.
+
+2. Check-In Counter
+
+Handles ticket verification and baggage processing.
+
+3. Security Checkpoint
+
+Performs passenger security screening.
+
+4. Queues
+
+Separate queues are maintained for:
+
+Check-in
+Security
+5. Boarding Process
+
+Passengers proceed to boarding after completing all checks.
+
+Small Conclusion Template
+
+The GPSS simulation represents an airline passenger processing system with check-in and
+security stages. Passengers were processed sequentially through each stage with queue management 
+and service facilities. The simulation helps evaluate passenger flow, waiting time, and resource 
+utilization for efficient airport operations.
