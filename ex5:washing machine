@@ -1,0 +1,107 @@
+SIMULATE
+WASHER STORAGE 3
+GENERATE 15     ;Clothes arrive every 15 minutes 
+QUEUE WASHQ
+ENTER WASHER
+DEPART WASHQ
+ADVANCE 15
+LEAVE WASHER
+
+QUEUE RINSEQ
+ENTER WASHER
+DEPART RINSEQ
+ADVANCE 10
+LEAVE WASHER
+
+QUEUE SPINQ
+ENTER WASHER
+DEPART SPINQ
+ADVANCE 5
+LEAVE WASHER
+TERMINATE
+GENERATE 480
+TERMINATE 1
+START 1
+
+Aim:
+
+Simulation of Washing Machine System
+
+Theory:
+
+A washing machine system is used in laundry services to process clothes through multiple stages such
+as washing, rinsing, and spinning. Customers arrive with clothes for cleaning, and available washing
+machines process them sequentially.
+
+If all washing machines are busy, arriving clothes wait in a queue until a machine becomes available.
+
+This simulation models a multiple-server laundry system with three washing machines and separate queues 
+for each processing stage.
+
+COMMANDS:
+GENERATE
+Creates clothes/customers entering the system.
+QUEUE
+Places customers into a waiting line.
+ENTER
+Allocates one available washing machine.
+DEPART
+Removes customers from the queue when processing begins.
+ADVANCE
+Simulates processing time.
+LEAVE
+Releases the washing machine after processing.
+TERMINATE
+Removes customers from the system or stops simulation.
+STORAGE
+Defines multiple washing machines/resources.
+Scenario Overview:
+
+The laundry service contains:
+
+Three washing machines
+Separate queues for washing, rinsing, and spinning
+Sequential processing stages
+
+Each customer undergoes:
+
+Washing
+Rinsing
+Spinning
+
+Customers wait whenever all washing machines are occupied.
+
+The system behaves like a multi-stage multiple-server queueing system.
+
+Key Components:
+1. Customers (Clothes)
+
+Clothes arrive randomly for laundry service.
+
+2. Washing Machines (Servers)
+
+Three washing machines process clothes simultaneously.
+
+3. Queues
+
+Separate waiting queues are maintained for:
+
+Washing
+Rinsing
+Spinning
+4. Processing Stages
+
+Clothes pass through washing, rinsing, and spinning sequentially before leaving the system.
+
+Small Conclusion Template
+During the 480-minute simulation:
+
+Total clothes/customers processed: 30
+Number of washing machines available: 3
+Washer utilization = 0.635 (63.5%)
+Average number of busy washers ≈ 1.906
+Maximum queue length in each stage = 1 customer
+Average waiting time in queues = 0 minutes
+The GPSS simulation represents a multiple-server washing machine system with three washing machines 
+and separate queues for each stage. Clothes were processed efficiently through washing, rinsing, and 
+spinning operations with minimal waiting time. The system showed smooth workflow and effective utilization of washing machines.
