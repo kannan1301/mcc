@@ -1,0 +1,46 @@
+SIMULATE
+GENERATE 4,1   ; cust arrive every 4+-1 min
+QUEUE LINE     ; a queue called line exists
+SEIZE B        ; barber is busy
+DEPART LINE    ; the cust departs the line when service starts
+ADVANCE 4,3    ; service time can be 4+-3
+RELEASE B      ; barber is free
+TERMINATE 1
+START 250
+
+Aim: Simulation of Single server Single Queueing System
+Theory: A single server queuing system consists of customers arriving at a service facility, waiting in a queue if the server is busy 
+and receiving the service once the server is free and then departing. 
+The system consists of arrival rate, service rate, queue length and waiting time. 
+COMMANDS:
+1.	GENERATE: creates entities at specified intervals/ inter-arrival times.
+2.	ADVANCE: simulate the passage of time during which an entity is in transit or being processed.
+3.	SEIZE: allocates a resource to an entity. If unavailable, the entity has to wait in a queue.
+4.	RELEASE: frees the resource or the server after the service is completed, making it available to serve the next entity.
+5.	TERMINATE: ends the process of an entity or stops the simulation based on a condition.
+Scenario Overview:
+•	The Barber Shop: The shop has a single barber (server) and a single line (queue) where customers wait for service. 
+This type of system is known as an M/M/1 queue, where:
+o	M stands for "Markovian" or memoryless, meaning the arrival times and service times follow exponential distributions.
+o	1 refers to a single server, in this case, the barber.
+Key Components:
+1.	Customers: Customers arrive at the barber shop at random intervals. When they arrive, they enter the queue and wait for the barber to become available 
+if the barber is busy.
+2.	Barber (Server): The barber is responsible for serving customers. The barber can only serve one customer at a time.
+3.	Queue (Line): If the barber is busy serving another customer, arriving customers will have to wait in the queue. 
+Conclusion: 
+Total customers generated: 256
+Customers served successfully: 250
+Single server B utilization = 0.969 (96.9%), meaning the server was busy almost all the time.
+Average service time ≈ 3.97 minutes
+Maximum queue length reached 7 customers
+Average waiting time in queue ≈ 7.4 minutes
+The GPSS simulation represents a single-server queue system. 
+The server utilization was very high (96.9%), showing that the server remained busy most of the time. 
+Customers experienced moderate waiting in the queue, with an average waiting time of about 7.4 minutes. 
+Hence, the system is efficient but heavily loaded and may require an additional server to reduce waiting time.
+
+
+
+
+
