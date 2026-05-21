@@ -6,7 +6,89 @@ ENTER BARBER  ;Customer occupies one available server
 DEPART LINE
 ADVANCE 8,4
 LEAVE BARBER  ;Frees one server
-TERMINATE 1
+TERMINATE 
 GENERATE 480
 TERMINATE 1
 START 1
+
+
+Aim:
+
+Simulation of Multiple Server Single Queueing System
+
+Theory:
+
+A multiple server single queueing system consists of customers arriving at a service
+facility containing multiple servers. Customers wait in a common queue if all servers 
+are busy and receive service from the next available server before departing from the system.
+
+The system consists of:
+
+Arrival rate
+Service rate
+Queue length
+Waiting time
+Number of servers
+COMMANDS:
+GENERATE
+Creates customers/entities at specified inter-arrival times.
+QUEUE
+Places arriving customers into the waiting line.
+ENTER
+Allocates one unit of storage/server to a customer.
+DEPART
+Removes the customer from the queue when service begins.
+ADVANCE
+Simulates service time.
+LEAVE
+Releases the occupied server after service completion.
+TERMINATE
+Removes the customer from the system or ends the simulation.
+STORAGE
+Defines multiple identical servers/resources.
+Scenario Overview:
+The Barber Shop:
+
+The barber shop contains multiple barbers (servers) and a single common 
+queue where customers wait for service.
+
+This system is known as an M/M/C queue, where:
+
+M represents Markovian arrival distribution (random arrivals)
+M represents Markovian service distribution (random service times)
+C represents multiple servers
+Key Components:
+1. Customers
+
+Customers arrive randomly at the barber shop. If all servers are busy, 
+customers wait in the common queue.
+
+2. Servers (Barbers)
+
+There are multiple barbers available to serve customers simultaneously. 
+Each barber can serve one customer at a time.
+
+3. Queue (Line)
+
+A single waiting line is maintained. Customers are served on a first-come 
+first-served basis whenever a server becomes free.
+
+Conclusion
+
+The GPSS simulation represents a Multiple Server Single Queue system with 3 servers (barbers)
+and one common waiting line.
+
+During the 480-minute simulation:
+
+Total customers generated: 47
+Customers served successfully: 46
+Number of servers available: 3
+Storage utilization = 0.256 (25.6%)
+Average number of busy servers ≈ 0.768
+Maximum queue length reached = 1 customer
+Average waiting time in queue = 0 minutes
+
+The report shows that the system handled customers efficiently with 
+very little queue formation. Since three servers were available, customers received
+service immediately in most cases. The server utilization was low,
+indicating that the system had more than enough service capacity for the incoming customers.
