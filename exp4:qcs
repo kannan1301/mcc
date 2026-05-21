@@ -1,0 +1,96 @@
+SIMULATE
+WORKER STORAGE 3
+GENERATE 20
+QUEUE QCQUEUE
+ENTER WORKER
+DEPART QCQUEUE
+ADVANCE 12
+LEAVE WORKER
+TERMINATE
+GENERATE 300
+TERMINATE
+GENERATE 480
+TERMINATE 1
+START 1
+
+Aim:
+
+Simulation of Quality Control System
+
+Theory:
+
+A quality control system is used in industries to inspect products and ensure they meet required
+standards before delivery or sale. Products arriving for inspection are checked by available inspectors 
+or workers. If all inspectors are busy, products wait in a queue until service becomes available.
+
+This simulation models a multiple-server quality control system with a single queue.
+
+The system mainly consists of:
+
+Product arrival rate
+Inspection/service time
+Queue length
+Waiting time
+Number of inspectors/workers
+COMMANDS:
+GENERATE
+Creates products arriving for inspection.
+QUEUE
+Places products into the waiting line.
+ENTER
+Allocates one available worker/server.
+DEPART
+Removes products from the queue once inspection starts.
+ADVANCE
+Simulates inspection time.
+LEAVE
+Releases the worker after inspection.
+TERMINATE
+Removes the product from the system or stops simulation.
+STORAGE
+Defines multiple identical workers/servers.
+Scenario Overview:
+
+The quality control system contains:
+
+Three inspectors/workers
+One common inspection queue
+Continuous product arrivals
+
+Products arrive randomly for inspection. If all inspectors are busy, products wait in the queue 
+until one worker becomes available.
+
+This behaves like an M/M/C queueing system, where:
+
+M = random arrivals
+M = random inspection times
+C = multiple servers
+Key Components:
+1. Products
+
+Products arrive for inspection and wait if inspectors are busy.
+
+2. Workers/Inspectors
+
+Three inspectors perform quality checks simultaneously.
+
+3. Queue
+
+A single waiting line stores products waiting for inspection.
+
+4. Inspection Process
+
+Products undergo quality checking before leaving the system.
+
+Small Conclusion Template
+During the 480-minute simulation:
+
+Total products inspected: 23
+Number of workers available: 3
+Worker utilization = 0.192 (19.2%)
+Average number of busy workers ≈ 0.575
+Maximum queue length reached = 1 product
+Average waiting time in queue = 0 minutes
+The GPSS simulation represents a multiple-server quality control system with three inspectors and one common queue.
+Products were inspected efficiently with minimal waiting time due to the availability of multiple workers. 
+The system showed smooth workflow and effective utilization of inspection resources.
