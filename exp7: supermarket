@@ -1,0 +1,85 @@
+SIMULATE
+GENERATE 6
+QUEUE BILLINGQ
+SEIZE BILLING
+DEPART BILLINGQ
+ADVANCE 5
+RELEASE BILLING
+
+ADVANCE 2
+TERMINATE
+
+BILLING EQU 10000
+
+GENERATE 480
+TERMINATE 1
+
+START 1
+
+Aim:
+
+Simulation of Supermarket System
+
+Theory:
+
+A supermarket system consists of customers arriving at billing counters to complete purchases. 
+Customers wait in a queue if the billing counter is busy and receive service once the counter becomes available.
+
+This simulation helps analyze:
+
+Customer waiting time
+Queue length
+Billing counter utilization
+Customer flow efficiency
+
+The system follows a single-server queueing model where one billing counter serves customers sequentially.
+
+COMMANDS:
+GENERATE
+Creates customer arrivals at specified intervals.
+QUEUE
+Places customers into the waiting line.
+SEIZE
+Allocates the billing counter to a customer.
+DEPART
+Removes customers from the queue after service begins.
+ADVANCE
+Simulates billing and exit processing time.
+RELEASE
+Frees the billing counter after service completion.
+TERMINATE
+Removes the customer from the system or stops simulation.
+EQU
+Defines the billing counter facility.
+Scenario Overview:
+
+The supermarket system contains:
+
+One billing counter
+One billing queue
+Continuous customer arrivals
+
+Customers arrive every 6 minutes, wait in the billing queue if necessary, complete billing, and then exit the supermarket.
+
+Key Components:
+1. Customers
+
+Customers arrive randomly for billing service.
+
+2. Billing Counter
+
+Processes customer billing one at a time.
+
+3. Queue
+
+Customers wait in the billing queue if the counter is busy.
+
+4. Exit Process
+
+Customers leave the supermarket after billing is completed.
+
+Small Conclusion Template
+
+The GPSS simulation represents a supermarket billing system with a single billing counter and one queue.
+Customers were processed sequentially through the billing system. The simulation helps analyze customer 
+waiting time, queue behavior, and billing counter utilization for efficient supermarket operations.
