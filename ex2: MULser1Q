@@ -1,0 +1,12 @@
+SIMULATE
+STORAGE BARBER 3  ;Creates 3 servers/resources
+GENERATE 10,5
+QUEUE LINE
+ENTER BARBER  ;Customer occupies one available server
+DEPART LINE
+ADVANCE 8,4
+LEAVE BARBER  ;Frees one server
+TERMINATE 1
+GENERATE 480
+TERMINATE 1
+START 1
