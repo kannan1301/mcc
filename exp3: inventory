@@ -1,0 +1,106 @@
+aim: Simulation of Inventory System
+
+SIMULATE
+WORKER STORAGE 3
+
+GENERATE 18,6
+QUEUE LINE
+ENTER WORKER
+DEPART LINE
+ADVANCE 16,4
+LEAVE WORKER
+TERMINATE
+
+GENERATE 240
+TERMINATE
+
+GENERATE 480
+TERMINATE 1
+
+START 1
+
+Theory:
+
+An inventory system is used to manage and control the storage, movement, and availability of goods or 
+materials in an organization. It helps businesses maintain sufficient stock levels while reducing shortages and excess inventory.
+
+In this simulation, multiple workers (servers) process inventory demands from customers.
+Customers arrive randomly and wait in a common queue if all workers are busy. 
+The system also includes periodic restocking events.
+
+The system mainly consists of:
+
+Arrival rate
+Service rate
+Queue length
+Waiting time
+Number of workers/servers
+COMMANDS:
+GENERATE
+Creates transactions or customers at specified time intervals.
+QUEUE
+Places customers in the waiting line.
+ENTER
+Allocates one available worker/server from storage.
+DEPART
+Removes customers from the queue once service begins.
+ADVANCE
+Simulates service or processing time.
+LEAVE
+Releases the worker/server after service completion.
+TERMINATE
+Removes the transaction from the system or stops the simulation.
+STORAGE
+Defines multiple identical servers/resources.
+Scenario Overview:
+Inventory Management System
+
+The system contains:
+
+Multiple workers (servers)
+A single waiting queue
+Periodic restocking process
+
+Customers generate inventory requests randomly. If all workers are busy, incoming requests wait in the
+queue until a worker becomes available.
+
+This system behaves similarly to an M/M/C queue, where:
+
+M indicates random arrivals
+M indicates random service times
+C indicates multiple servers
+Key Components:
+1. Customers
+
+Customers generate inventory demands and enter the queue when workers are busy.
+
+2. Workers (Servers)
+
+Three workers process inventory requests simultaneously. Each worker handles one customer at a time.
+
+3. Queue (Line)
+
+A single common queue is maintained for waiting customers.
+
+4. Restocking Process
+
+Restocking transactions occur periodically to represent supply replenishment.
+
+Conclusion:
+
+The GPSS simulation represents a multiple-server inventory management system with 3 workers and a single queue.
+
+During the 480-minute simulation:
+
+Total customers generated: 26
+Customers served successfully: 25
+Number of workers available: 3
+Worker utilization = 0.288 (28.8%)
+Average number of busy workers ≈ 0.863
+Maximum queue length reached = 1 customer
+Average waiting time in queue = 0 minutes
+
+The report shows that the inventory system handled customer requests efficiently with minimal 
+queue formation and no significant waiting time. Since multiple workers were available, 
+most requests were processed immediately. The worker utilization was low, indicating that the system 
+had sufficient processing capacity for the incoming inventory demands.
