@@ -1,0 +1,268 @@
+Q1. Define system and system environment in the context of simulation. Explain with one suitable real-life example. 
+Ans: A system is a collection of interrelated components (entities, attributes, activities and resources) that work together to achieve a certain goal or objective. The simulation model is a simplified representation of this system.
+Ex: banking system, traffic system, hospital system.
+A system environment consists of all external factors and conditions that lie outside the system but directly influence its behaviour. The environment provides inputs to the system and the system may produce outputs that affects the environment, but internal changed within the system don’t alter the environment.
+Ex: customers affecting bank system
+EXAMPLE: CAR WASH SYSTEM
+System: 
+1.	Entities: cars
+2.	Attributes: size of car, type of wash
+3.	Resources: wash tunnel, soap sprayer, dryer, water, workers.
+4.	Process: arrival, payment, pre-rinse, soap application, brush wash, rinse, dry, exit.
+5.	Objective: minimise average wait time or maximise car washed per hour.
+Environment:
+1.	Arrival pattern
+2.	Weather condition
+3.	Customer behaviour
+4.	Electric supply fluctuation
+Q2. Explain the models.
+Ans: A model is a logical or mathematical abstraction of a real system that captures its core behaviour. using the model experiments are performed to study the system behaviour.
+ it includes:
+Input variables: parameters that define the system
+Output variable: parameters that measure the system
+Mathematical or logical relationships: links inputs to outputs.
+TYPES OF MODELS:
+1.	PHYSICAL MODEL:
+-	A physical model is a tangible, real world replica of a system. It can be seen and touched.
+Ex: miniature building, car, human heart etc.
+-	APPLICATION: architecture, medical education, mechanical design,
+-	ADVANTAGES: easy to understand and visualise, useful for teaching and demonstrating, helps in design understanding.
+-	DISADVANTAGES: can be expensive to build, scaling issue may affect accuracy, cannot always represent dynamic behaviour.
+2.	MATHEMATICAL MODEL: 
+-	It represents a system using equations, variable, formulas and probabilities.
+-	APPLICATIONS: AI, ML, data science, economics, simulation.
+Ex: speed = distance/time, profit = revenue/cost.
+-	DETERMINISTIC MODEL: no randomness, same input gives same output. Ex: length*breadth = area 
+-	STOCHASTIC MODEL: includes randomness and uncertainty, same input may give different output. Ex: customer arrival times, weather forecasting, stock market behaviour.
+-	ADVANTAGS: powerful and precise representation, useful in prediction and optimisation, can be efficiently processed by computers, forms the foundation of AI and ML.
+-	LIMITATIONS: requires strong mathematical knowledge, complex systems can be difficult to model, incorrect assumptions lead to wrong results.
+3.	SIMULATION MODEL:
+-	It is a computer-based implementation of a system that imitates its behaviour over time. It allows experimentation without affecting the real system.
+ 
+Ex: hospital operations, pilot training, road traffic
+-	CHARACTERISTICS: usually dynamic [changes with time], shows system behaviour under different conditions, allows ‘what-if’ analysis, helps compare multiple scenarios.
+Ex: with 2 doc, avg waiting time = 30 mins. With 3 doc, avg waiting time = 20 mins.
+Q3: STEPS INVOLVED IN SIMULATION STUDY
+Ans: Simulation is a computer-based imitation of a real-world system or process where models are used to study behaviour, predict outcomes and test different scenarios and test decisions without affecting the actual system.
+It is used to experiment safely, to reduce cost and time, predict future scenarios, train and plan before real execution.
+it follows a systematic process:
+1.	PROBLEM DEFINITION: clearly identify the problem, without clear problem- simulation becomes useless.
+Ex: students are waiting for too long in canteen queue.
+2.	SYSTEM UNDERSTANDING: understand how the real system works. Identify the entities (customers, machines, students), resources (staff, counters), process flow (who comes first, what happens next). 
+Ex: how students arrive-> how the order -> how food is served.
+3.	MODEL DEVELOPMENT: model of the system is created; mathematical model, logical flow, computer simulation etc.
+Ex: model canteen as: arrival rate of students, service time per student, number of counters.
+4.	DATA COLLECTION: collect real data from the system. Good data= good simulation result.
+Ex: avg arrival time, avg wait time, peak hour rush, resource availability.
+5.	VERIFICATION AND VALIDATION: ‘are we building the model correctly?’ and ‘does the model behave like the real system?’
+-	Checks logic errors in model and compare simulation op with real data.
+6.	SIMULATION EXECUTION: run the simulation and test on different scenarios.
+Ex: what if more counters were there, what if arrival rate increased, what if staff reduced?
+7.	RESULT ANALYSIS: analyse output using graphs, charts, reports and tables. 
+Ex: waiting time reduces from 15-6 mins when extra counter is added.
+8.	IMPLEMENTATION: apply the best solution to the system.
+Ex: one more counter was added to the cafeteria.
+ADVANATGES:
+-	No risk to real system
+-	Saves cost compared to real experiments
+-	Complex systems can be analysed easily
+-	Multiple scenarios can be tested
+-	Improves decision making
+-	Useful in healthcare, AI, ML, business, traffic
+DISADVANTAGE:
+-	Model development takes time
+-	Requires skilled EXPERTS
+-	Poor data gives wrong result
+-	Sw tools can be costly
+-	Wrong assumption= misleading decisions
+Q4: What is Discrete Event Simulation (DES)
+Ans: it is a type of simulation model where the state of a system changes only at distinct points in time, called events, rather than continuously. Between events the system remains unchanged. 
+TIME ADVANCES FROM ONE EVEN TO ANOTHER AND SKIPS THE INACTIVE PERIOD
+Unlike continuous stimulation (tracking temperature second by second), DES jumps from one event to another, making it highly efficient for systems where changes happen at specific moments (ex, customer arriving, machine breaking, power cut)
+KEY ELEMENTS:
+1.	Entities: dynamic objects that move through the system and eventually exit. (customers, packets)
+2.	Events: schedules events (service ends at 10pm), conditional events (if teller is free, and queue is not empty= start service)
+3.	Resources: provide service to entities, have capacity (2 tellers), can be seized and released.
+4.	Queue: FIFO is common, can be LIFO or priority queue. Measured statistic: avg len, avg waiting time etc.
+5.	State variable: total_cust_served, queue_len etc
+-	Simulation clock: advances from event time to event time. 
+Clock jumps 0-5(arrival)- 5.3(start service)-7.1(departure)
+ADVANTAGE:
+1.	Efficiency: skips long idle period
+2.	Natural fit: most real systems are event driven (hospital)
+3.	Stochastic capability: can use random distribution for arrival and service times
+4.	Output statistics: automatically collects waiting time, utilisation queue length
+
+ 
+Feature	Discrete Distribution	Continuous Distribution
+Values	Countable (0,1,2…)	Infinite range
+Example	Poisson, Binomial	Normal, Exponential
+Use	Number of arrivals	Time between events
+Graph	Bars	Smooth curve
+
+Q5: Queueing system? Explain single-server, single queue system with example.
+Ans: Queueing system is a system in which customers or entities arrive over time, if service is not immediately available, they wait in queue. They receive service from one or more servers, after service completion, they exit the system.
+COMPONENTS:
+1.	Calling population: the group of customers that require service. Infinite population (bank customers) finite population (machines in a factory)
+2.	Arrival process: describes how customers arrive at the system. Usually random in nature, inter arrival time.
+3.	Queue/waiting line: if server is busy, customers must wait. FCFS, LCFS, Priority based.
+4.	Service mechanism: number of servers (single or multi) service time (constant or random)
+5.	Departure process: after service completion, cust must leave.
+ 
+STEPS IN QUEUING SYSTEM
+1.	Define the system: ex: bank with only one cashier and randomly arriving customers.
+2.	Identify random variables: inter arrival time, service time.
+3.	Generate random numbers: pseudo-random numbers generated by computer, used to calculate arrival and service times.
+4.	Identify events; queuing system is a DES with 2 main events: arrival and departure event
+5.	Advance simulation clock: clock doesn’t move continuously and jumps from one event to next.
+6.	Collect statistics: waiting time of each cust, queue length, server idle and busy time.
+ADVANTAGE:
+1.	Realistic modelling
+2.	Flexible
+3.	Useful for system design
+4.	Can test improvements before implementation
+DISADVANTAGES:
+1.	Time consuming
+2.	Requires good ip data
+3.	 Results are approximate
+ 
+
+ 
+ 
+Q6. Grocery Store Simulation (5 customers)
+Given:
+•	Interarrival time: 1–4 mins 
+•	Service time: 1–4 mins 
+Let’s assume random values (since you weren’t given any, thanks question setter):
+Customer	Interarrival	Arrival Time	Service Time	Start Time	End Time	Waiting Time
+C1	0	0	3	0	3	0
+C2	2	2	2	3	5	1
+C3	1	3	4	5	9	2
+C4	3	6	1	9	10	3
+C5	2	8	2	10	12	2
+Calculations:
+•	Avg Waiting Time = (0+1+2+3+2)/5 = 1.6 mins 
+•	Server Utilization = Busy Time / Total Time = 12/12 = 100% 
+•	Avg Service Time = (3+2+4+1+2)/5 = 2.4 mins
+Q7. Applications + Complete Simulation Study
+Applications of Simulation:
+•	Manufacturing (production lines) 
+•	Healthcare (patient flow) 
+•	Banking (queue systems) 
+•	Transportation (traffic flow) 
+•	IT systems (network performance) 
+Example: Hospital Emergency Room Simulation
+1. Problem Definition:
+Long waiting times in ER.
+2. Objective:
+Reduce patient waiting time.
+3. Model Formulation:
+•	Entities: Patients 
+•	Resources: Doctors 
+•	Events: Arrival, treatment, discharge 
+4. Data Collection:
+Arrival rates, service times
+5. Model Implementation:
+Use simulation software or code
+6. Verification:
+Check logic correctness
+7. Validation:
+Compare with real hospital data
+8. Experimentation:
+Test scenarios:
+•	More doctors 
+•	Priority queues 
+9. Analysis:
+Measure waiting time, utilization
+10. Conclusion:
+Choose best configuration
+The system with:
+•	2 servers + 1 common queue
+has better efficiency than 
+•	2 servers + 2 separate queues 
+even if both servers have the same service rate.
+Why?
+With 1 common queue:
+•	customers go to the next available server automatically 
+•	no server stays idle while another queue becomes long 
+•	workload is balanced 
+•	waiting time is reduced 
+With 2 separate queues:
+•	one queue may become overloaded 
+•	one server may sit idle while customers wait in the other queue 
+•	imbalance reduces overall efficiency 
+1 Server + Multiple Queues
+Example:
+•	1 barber 
+•	3 separate lines 
+Problems:
+•	One queue may become very long while another stays empty. 
+•	Customers choose queues inefficiently. 
+•	Server utilization may become uneven. 
+•	More waiting time overall. 
+Result:
+•	Efficiency decreases 
+•	Waiting time increases 
+•	Queue management becomes poor 
+________________________________________
+Multiple Servers + 1 Queue
+Example:
+•	3 billing counters 
+•	1 common queue 
+Advantages:
+•	Next free server takes the next customer immediately. 
+•	Balanced workload among servers. 
+•	Less waiting time. 
+•	Better utilization. 
+Result:
+•	Efficiency increases 
+•	Queue moves faster 
+•	Better resource utilization
+Steady State Behavior of Infinite Population Model
+Definition
+In an infinite population model, the number of customers/source population is assumed to be extremely large or unlimited. Customer arrivals are independent of the number already in the system.
+The system reaches a steady state when:
+•	arrival rate and service rate become stable over time 
+•	queue measures stop changing significantly
+2. Markovian Models
+Definition
+A Markovian model is a queueing model where:
+•	arrivals follow Poisson distribution 
+•	service times follow exponential distribution 
+•	future state depends only on present state 
+This is called the memoryless property.
+3. Steady State Behavior of Finite Population Model
+Definition
+In a finite population model, the number of customers is limited. The arrival rate depends on how many customers are already in the system.
+The system reaches steady state when probabilities of different states become constant over time.
+Definition
+Statistical models are mathematical models used to represent real-world random systems and analyze uncertain events using probability and statistics.
+They help in:
+•	prediction 
+•	decision making 
+•	simulation 
+•	data analysis 
+Applications
+•	Queueing systems 
+•	Inventory management 
+•	Weather forecasting 
+•	Machine learning 
+•	Quality control
+4.2 Discrete Distribution
+Definition
+A discrete probability distribution describes random variables that take only specific countable values.
+________________________________________
+Characteristics
+•	Finite or countable outcomes 
+•	Probability assigned to each value 
+•	Sum of probabilities = 1
+4.3 Continuous Distribution
+Definition
+A continuous probability distribution describes random variables that can take any value within a range.
+________________________________________
+Characteristics
+•	Infinite possible values 
+•	Measured quantities 
+•	Probability represented by area under curve
+
+
